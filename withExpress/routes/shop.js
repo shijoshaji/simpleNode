@@ -3,6 +3,8 @@ const path = require('path');
 
 const router = express.Router();
 
+const rootDir = require('../util/pathWrapper');
+
 // router.get('/', (req, res, next) => {
 //   // console.log(' ********');
 //   // console.log(' First Middle ware');
@@ -22,7 +24,8 @@ const router = express.Router();
 // NOTE: we created html file so we can send them as file
 
 router.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
+  // res.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
+  res.sendFile(path.join(rootDir, 'views', 'shop.html'));
 });
 
 module.exports = router;

@@ -3,6 +3,9 @@ const path = require('path');
 
 const router = express.Router();
 
+
+const rootDir = require('../util/pathWrapper');
+
 // add new product
 // router.get('/addProduct', (req, res, next) => {
 //   console.log('we are in add product');
@@ -14,7 +17,8 @@ const router = express.Router();
 // using sendFile instead of res.send
 
 router.get('/addProduct', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'));
+  // res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'));
+  res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
 });
 
 router.post('/product', (req, res, next) => {
